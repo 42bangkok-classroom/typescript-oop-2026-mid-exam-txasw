@@ -2,6 +2,7 @@ export function readJson(fileName: string): unknown[] {
     let data
     try {
         data = require(fileName)
+        if (!data) throw "Invalid file"
     }catch{
         throw "Invalid file"
     }
