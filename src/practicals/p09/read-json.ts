@@ -1,13 +1,12 @@
+import fs from 'fs';
 export function readJson(fileName: string): unknown[] {
     let data
     try {
-        data = require(fileName)
-        if (!data) throw "Invalid file"
+        data = fs.readFileSync(fileName, { encoding: 'utf8', flag: 'r' })
     }catch{
         throw "Invalid file"
     }
-    if (typeof data == 'object') return data
-
+    
     try {
         return JSON.parse(data);
     } catch {
