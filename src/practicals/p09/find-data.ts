@@ -3,14 +3,11 @@ import fs from 'fs';
 
 export function findData(fileName: string, key: string, value: string | number): void {
   const data = readJson(fileName)
-  const findkey = data.filter((val: any) => val[key])
-  if (findkey.length === 0) throw "Invalid Key"
+  
+  const hasKey = data.some((val: any) => Object.prototype.hasOwnProperty.call(val, key))
+  if (!hasKey) throw "Invalid key"
 
-  const foundPair = data.filter((val: any) => val[key] == value)
-  fs.writeFile(
-    "output.json",
-    JSON.stringify(foundPair),
-    err => {},
-    ); 
+  const foundPair = data.filter((val: any) => val[key] === value)
 
+  fs.writeFileSync("output.json", JSON.stringify(foundPair))
 }
