@@ -3,7 +3,7 @@ export function readJson(fileName: string): unknown[] {
     let data;
     try {
         fileName = "datasets/" + fileName;
-        data = fs.readFileSync(fileName, { encoding: 'utf8'});
+        data = fs.readFileSync(fileName, 'utf-8');
     } catch {
         throw "Invalid file";
     }
