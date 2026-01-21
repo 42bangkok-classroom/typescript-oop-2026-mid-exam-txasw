@@ -1,6 +1,6 @@
 import axios from "axios";
 
-interface FullAlbum {
+export interface FullAlbum {
     userId: number,
     id: number,
     title: string,
