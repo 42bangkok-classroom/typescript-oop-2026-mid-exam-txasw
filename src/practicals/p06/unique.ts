@@ -1,4 +1,4 @@
-function getUniqueNumbers(arr1: number[], arr2: number[]): number[] {
+export function getUniqueNumbers(arr1: number[], arr2: number[]): number[] {
   // Write your code below
   const unq1 = arr1.filter(val => arr2.indexOf(val) == -1)
   const unq2 = arr2.filter(val => arr1.indexOf(val) == -1)
