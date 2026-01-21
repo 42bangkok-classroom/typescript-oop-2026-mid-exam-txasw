@@ -8,7 +8,7 @@ export function readJson(fileName: string): unknown[] {
     }
     
     try {
-        return JSON.parse(data);
+        return JSON.parse(data) as unknown[];
     } catch {
         throw "Invalid JSON format"
     }
