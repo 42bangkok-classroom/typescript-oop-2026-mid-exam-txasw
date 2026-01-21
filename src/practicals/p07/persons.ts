@@ -13,7 +13,7 @@ export function sortPersons(persons: Person[]): Person[] {
   const nameFilter = persons.filter(person => person.firstName)
   const lastFilter = nameFilter.filter(person => person.lastName)
   const ageFilter = lastFilter.filter(person => person.age && (person.age >= 0 && person.age <= 100)) as ValidPerson[]
-  const sorted = ageFilter.sort((a, b) => a.firstName?.localeCompare(b.firstName) || a.lastName?.localeCompare(b.lastName) || b.age - a.age)
+  const sorted = ageFilter.sort((a, b) => b.age - a.age || a.firstName?.localeCompare(b.firstName) || a.lastName?.localeCompare(b.lastName))
   return sorted as Person[]
 }
 
