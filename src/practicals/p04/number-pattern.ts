@@ -4,12 +4,13 @@ const pattern = Number(rawPattern)
 
 if (pattern > 0) {
     for (let i = 1; i <= pattern; i++) {
+        let out = ""
         for (let j = 0; j < pattern - i; j++) {
-            process.stdout.write(" ")
+            out += " "
         }
         for (let k = i; k >= 1; k--) {
-            process.stdout.write(`${k}`)
+            out += `${k}`
         }
-        console.log()
+        console.log(out)
     }
 }
