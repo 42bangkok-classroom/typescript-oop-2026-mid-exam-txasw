@@ -9,5 +9,5 @@ export function findData(fileName: string, key: string, value: string | number):
 
   const foundPair = data.filter((val: any) => val[key] === value)
 
-  fs.writeFileSync("output.json", JSON.stringify(foundPair))
+  fs.writeFileSync("output.json", JSON.stringify(foundPair, null, 2))
 }
