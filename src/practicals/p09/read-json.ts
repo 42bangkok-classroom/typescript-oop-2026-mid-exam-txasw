@@ -2,8 +2,7 @@ import fs from 'fs';
 export function readJson(fileName: string): unknown[] {
     let data;
     try {
-        fileName = "datasets/" + fileName;
-        data = fs.readFileSync(fileName, { encoding: 'utf8', flag: 'r' });
+        data = fs.readFileSync(fileName, { encoding: 'utf8'});
     } catch {
         throw "Invalid file";
     }
